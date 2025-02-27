@@ -1,0 +1,30 @@
+@model IEnumerable<Mission7_Wirthlin.Models.Movie>
+@{
+    ViewBag.Title = "Movie Collection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Joel Hilton Movie Collection</h1>
+<p><a asp-action="Create" class="btn btn-primary">Add New Movie</a></p>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>Title</th><th>Year</th><th>CategoryId</th><th>Director</th><th>Rating</th>
+        <th>Edited</th><th>Copied to Plex</th><th>Lent To</th><th>Notes</th><th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Title</td><td>@movie.Year</td><td>@movie.CategoryId</td><td>@movie.Director</td>
+            <td>@movie.Rating</td><td>@(movie.Edited ? "Yes" : "No")</td><td>@(movie.CopiedToPlex ? "Yes" : "No")</td>
+            <td>@movie.LentTo</td><td>@movie.Notes</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@movie.MovieId" class="btn btn-sm btn-warning">Edit</a>
+                <a asp-action="Delete" asp-route-id="@movie.MovieId" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
