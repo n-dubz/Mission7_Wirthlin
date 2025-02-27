@@ -128,3 +128,4 @@
 /Users/nicko/RiderProjects/Mission7_Wirthlin/Mission7_Wirthlin/obj/Debug/net9.0/Mission7_Wirthlin.genruntimeconfig.cache
 /Users/nicko/RiderProjects/Mission7_Wirthlin/Mission7_Wirthlin/obj/Debug/net9.0/ref/Mission7_Wirthlin.dll
 /Users/nicko/RiderProjects/Mission7_Wirthlin/Mission7_Wirthlin/bin/Debug/net9.0/JoelHiltonMovieCollection.sqlite
+/Users/nicko/RiderProjects/Mission7_Wirthlin/Mission7_Wirthlin/obj/Debug/net9.0/Mission7_Wirthlin.sourcelink.json

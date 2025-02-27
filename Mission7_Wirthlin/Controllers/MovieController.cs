@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Mission7_Wirthlin.Data;
 using Mission7_Wirthlin.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Mission7_Wirthlin.Controllers
 {
@@ -16,13 +18,14 @@ namespace Mission7_Wirthlin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(m => m.Category).ToList();
             return View(movies);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Categories = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View();
         }
 
@@ -35,6 +38,7 @@ namespace Mission7_Wirthlin.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Categories = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View(movie);
         }
 
@@ -43,6 +47,7 @@ namespace Mission7_Wirthlin.Controllers
         {
             var movie = _context.Movies.Find(id);
             if (movie == null) return NotFound();
+            ViewBag.Categories = new SelectList(_context.Categories, "CategoryId", "CategoryName", movie.CategoryId);
             return View(movie);
         }
 
@@ -55,6 +60,7 @@ namespace Mission7_Wirthlin.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Categories = new SelectList(_context.Categories, "CategoryId", "CategoryName", movie.CategoryId);
             return View(movie);
         }
 

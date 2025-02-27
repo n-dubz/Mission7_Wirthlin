@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission7_Wirthlin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29cd1ec000ebc3d42f14e7dd765b4720df05c328")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission7_Wirthlin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission7_Wirthlin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

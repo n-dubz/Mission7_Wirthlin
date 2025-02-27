@@ -7,11 +7,8 @@ namespace Mission7_Wirthlin.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Movie>().ToTable("Movies"); // Explicitly set table name
-        }
+
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; } // Add this
     }
-    
 }
